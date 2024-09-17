@@ -8,7 +8,7 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String forwardToIndex() {
-		return "forward:/flutter/index.html";
+		return "forward:/index.html";
 	}
 
 }
