@@ -24,13 +24,6 @@ public class BlottoController {
 	@SneakyThrows
 	@PostMapping(value = "/blotto", consumes = "application/json")
 	public ResponseEntity<String> blotto(@RequestBody Army army) {
-//	public ResponseEntity<String> blotto(@RequestBody List<Integer> soldiers) {
-		System.out.println("Got request");
-
-//		var army = new Army();
-//		army.setGeneralName("General");
-//		army.setSoldiers(soldiers);
-
 		if (army.getSoldiers().size() != 9) {
 			throw new Exception("army size should be 9. Your army size is " + army.getSoldiers().size());
 		}
@@ -49,4 +42,12 @@ public class BlottoController {
 		var response = armyService.getArmy(generalName);
 		return ResponseEntity.ok().body(response);
 	}
+
+	@GetMapping(value = "/battle/")
+	public ResponseEntity<String> battle() {
+		armyService.battle();
+		return ResponseEntity.ok("ended");
+	}
+
+
 }
