@@ -5,6 +5,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;
 
-public interface ArmyRepository extends MongoRepository<ArmyDao, String> {
+public interface ArmyMongoRepository extends MongoRepository<ArmyDao, String> {
 	Optional<ArmyDao> getByGeneralName(String generalName);
 }
