@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>blotto-game</artifactId>
+    <artifactId>blotto-game-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>blotto-game</name>
     <description>blotto-game</description>
@@ -63,10 +63,6 @@
             <artifactId>mapstruct-processor</artifactId>
             <version>1.6.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
-<!--        </dependency>-->
     </dependencies>
 
     <build>

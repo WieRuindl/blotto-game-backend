@@ -13,13 +13,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
-import java.util.List;
-
 @RestController
-@CrossOrigin
 @RequiredArgsConstructor
 @Slf4j
+@CrossOrigin(
+		origins = {"http://localhost:5555/", "http://localhost:5556/", "https://blotto-game.fly.dev"},
+		allowCredentials = "true",
+		allowedHeaders = "*"
+)
 public class BlottoController {
 
 	private final ArmyService armyService;
@@ -50,7 +51,7 @@ public class BlottoController {
 		return ResponseEntity.ok().body(response);
 	}
 
-	@GetMapping(value = "/battle/")
+	@GetMapping(value = "/battle")
 	public ResponseEntity<String> battle() {
 		armyService.battle();
 		return ResponseEntity.ok("battle ended");
