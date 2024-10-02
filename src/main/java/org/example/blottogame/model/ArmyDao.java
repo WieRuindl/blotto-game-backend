@@ -12,7 +12,6 @@ import java.util.List;
 @Document(collection = "army")
 public class ArmyDao {
 	@Id
-	private String id;
 	private String generalName;
 	private List<Integer> soldiers;
 }

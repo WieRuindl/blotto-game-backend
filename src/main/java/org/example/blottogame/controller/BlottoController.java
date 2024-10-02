@@ -28,7 +28,6 @@ public class BlottoController {
 	@SneakyThrows
 	@PostMapping(value = "/blotto", consumes = "application/json")
 	public ResponseEntity<String> blotto(@RequestBody Army army) {
-		System.out.println(army.toString());
 		log.info(army.toString());
 		if (army.getSoldiers().size() != 9) {
 			throw new Exception("army size should be 9. Your army size is " + army.getSoldiers().size());
@@ -40,8 +39,8 @@ public class BlottoController {
 		}
 
 		var response = armyService.saveArmy(army);
-		System.out.println(response);
 		log.info(response);
+
 		return ResponseEntity.ok().body(response);
 	}
 
